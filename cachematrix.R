@@ -1,4 +1,4 @@
-## Write a short comment describing this function
+## This function creates a special "matrix" object that can cache its inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
   
@@ -17,12 +17,10 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## The following function calculates the mean of the special "vector"
-## created with the above function. However, it first checks to see if the
-## mean has already been calculated. If so, it `get`s the mean from the
-## cache and skips the computation. Otherwise, it calculates the mean of
-## the data and sets the value of the mean in the cache via the `setmean`
-## function.
+## This function computes the inverse of the special 
+## "matrix" returned by `makeCacheMatrix` above. If the inverse has
+## already been calculated (and the matrix has not changed), then
+## `cacheSolve` should retrieve the inverse from the cache.
 
 cacheSolve <- function(x, ...) {
   m <- x$getinverse()
